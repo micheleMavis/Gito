@@ -12,11 +12,14 @@ def createRepo(name):
 	pyautogui.sleep(3)
 	handle = win32gui.GetForegroundWindow()
 	win32gui.ShowWindow(handle, win32con.SW_MAXIMIZE)
+	pyautogui.moveTo(328, 666)
+	pyautogui.click()
 	pyautogui.moveTo(622,447)
 	pyautogui.click()
 	pyautogui.write(name, interval=0.2)
 	pyautogui.PAUSE = 1
-	pyautogui.keyDown('enter')
+	pyautogui.press('enter')
+	pyautogui.press('enter')
 
 createRepo(rep)
 
@@ -35,5 +38,5 @@ print('Done!')
 
 os.system('subl .')
 
-url = url.strip('.git')
+url = url[:-4]
 webbrowser.open(url)
